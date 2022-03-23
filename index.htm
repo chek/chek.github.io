@@ -1,861 +1,464 @@
-<!DOCTYPE html>
-<!-- saved from url=(0029)http://www.sonako-team.de/de/ -->
+<!doctype html>
 <html>
 
 <head>
-	
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css">
-        .gm-control-active>img {
-            box-sizing: content-box;
-            display: none;
-            left: 50%;
-            pointer-events: none;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%)
-        }
+  <meta name="viewport" content="width=device-width"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Your order was delivered</title>
+  <style>
+    /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
 
-        .gm-control-active>img:nth-child(1) {
-            display: block
-        }
+    /*All the styling goes here*/
 
-        .gm-control-active:hover>img:nth-child(1),
-        .gm-control-active:active>img:nth-child(1) {
-            display: none
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .gm-control-active:hover>img:nth-child(2),
-        .gm-control-active:active>img:nth-child(3) {
-            display: block
-        }
-    </style>
-    <link type="text/css" rel="stylesheet" href="./assets/css">
-    <style type="text/css">
-        .gm-ui-hover-effect {
-            opacity: .6
-        }
+    body {
+      background-color: #fff;
+      color: #636466;
+      font-family: sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      font-family: Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+    }
 
-        .gm-ui-hover-effect:hover {
-            opacity: 1
-        }
-    </style>
-    <style type="text/css">
-        .gm-style .gm-style-cc span,
-        .gm-style .gm-style-cc a,
-        .gm-style .gm-style-mtc div {
-            font-size: 10px;
-            box-sizing: border-box
-        }
-    </style>
-    <style type="text/css">
-        @media print {
+    table {
+      border-collapse: separate;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      width: 100%;
+      border-spacing: 0;
+    }
 
-            .gm-style .gmnoprint,
-            .gmnoprint {
-                display: none
-            }
-        }
+    table td {
+      font-family: sans-serif;
+    }
 
-        @media screen {
+    /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
 
-            .gm-style .gmnoscreen,
-            .gmnoscreen {
-                display: none
-            }
-        }
-    </style>
-    <style type="text/css">
-        .gm-style-pbc {
-            transition: opacity ease-in-out;
-            background-color: rgba(0, 0, 0, 0.45);
-            text-align: center
-        }
+    .body, .container, .content {
+      width: 100%;
+    }
 
-        .gm-style-pbt {
-            font-size: 22px;
-            color: white;
-            font-family: Roboto, Arial, sans-serif;
-            position: relative;
-            margin: 0;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%)
-        }
-    </style>
-    <title>Professionelle Dienstleistung für den Qualitätssektor</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="-1">
-    <meta name="description"
-        content="Wir sind ein schlank strukturierter Dienstleister mit dem Fokus auf die Qualitätssicherung als Ihr zuverlässiger Partner bei Ihnen im Haus und bei Ihren Lieferanten.">
-    <link type="text/css" rel="stylesheet" href="./assets/css(1)">
-    <!--[if IE]>
-    <link rel="shortcut icon" href="/ico/favicon.ico"><![endif]-->
-    <link rel="icon" type="image/png" href="http://www.sonako-team.de/ico/favicon.png">
-    <meta name="application-name" content="HOLZFORMART">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #141E54;
-        }
+    /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: #000000;
+      font-family: sans-serif;
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 10px 0;
+      text-align: center;
+    }
 
-        .preloader {
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 99999999;
-        }
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.2em;
+    }
 
-        .preloader .curtain {
-            background-color: #141E54;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            -webkit-transition: opacity .75s;
-            -moz-transition: opacity .75s;
-            -ms-transition: opacity .75s;
-            transition: opacity .75s;
-        }
+    h3,
+    .h3 {
+      font-size: 16px;
+      font-weight: 900;
+      margin: 10px 0;
+    }
 
-        .newload {
-            overflow: hidden
-        }
+    .h4 {
+      font-size: 18px;
+    }
 
-        .newload .preloader,
-        .loading .preloader,
-        .hideloader .preloader,
-        .loaded .preloader {
-            z-index: 99999;
-        }
+    p,
+    ul,
+    ol {
+      font-size: 18px;
+      font-weight: normal;
+      margin: 0;
+      margin-bottom: 15px;
+      text-align: center;
+      font-family: sans-serif;
+    }
 
-        .newload .preloader .curtain,
-        .loading .preloader .curtain,
-        .loaded .preloader .curtain {
-            opacity: 1;
-        }
+    p li,
+    ul li,
+    ol li {
+      list-style-position: inside;
+      margin-left: 5px;
+    }
 
-        .hideloader .preloader .curtain {
-            opacity: 0;
-        }
+    a {
+      color: #00a6aa;
+      text-decoration: none;
+    }
+      
+    .hashtag {
+      color: #00a6aa;
+    }
 
-        .preloader .loader {
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-            position: relative;
-            background: #ffffff;
-            top: 50%;
-            margin-top: -60px;
-            border-radius: 80px;
-            animation: loader 2s infinite ease;
-            -webkit-animation: loader 2s infinite ease;
-            -moz-animation: loader 2s infinite ease;
-            -o-animation: loader 2s infinite ease;
-        }
+    /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+    .btn {
+      border-radius: 30px;
+      width: 200px;
+      background-color: #1E3A3B;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 50px;
+    }
 
-        .preloader .loader-inner {
-            display: block;
-            width: 150%;
-            height: 150%;
-            margin: -50%;
-            border-radius: 120px;
-            background-color: #141E54;
-            animation: loader-inner 4s infinite ease;
-            -webkit-animation: loader-inner 4s infinite ease;
-            -moz-animation: loader-inner 4s infinite ease;
-            -o-animation: loader-inner 4s infinite ease;
-        }
+    .btn a {
+      color: #ffffff;
+      font-size: 18px;
+    }
+      
+    @media (prefers-color-scheme: dark) {
+      .btn {
+        background-color: #1E3A3B;
+      }          
 
-        @keyframes loader {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
+      .btn a {
+        color: #ffffff;
+      }          
+    }
 
-            25% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+    /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+    @media only screen and (max-width: 768px) {
+      table[class=body] h1 {
+        font-size: 21px !important;
+        margin-bottom: 10px !important;
+      }
 
-            50% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+      table[class=body] p,
+      table[class=body] ul,
+      table[class=body] ol,
+      table[class=body] td,
+      table[class=body] span,
+      table[class=body] a {
+        font-size: 16px !important;
+      }
 
-            75% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
+      table[class=body] .content {
+        padding: 0 !important;
+      }
 
-            100% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
-        }
+      table[class=body] .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
 
-        @-webkit-keyframes loader {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
+      table[class=body] .main {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        border-right-width: 0 !important;
+      }
 
-            25% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+      table[class=body] .btn table {
+        width: 100% !important;
+      }
 
-            50% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+      table[class=body] .btn a {
+        width: 100% !important;
+      }
 
-            75% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
+      table[class=body] .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+    }
 
-            100% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
-        }
+    /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+    @media all {
+      .ExternalClass {
+        width: 100%;
+      }
 
-        @-mos-keyframes loader {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
 
-            25% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+      .apple-link a {
+        color: inherit !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        text-decoration: none !important;
+      }
 
-            50% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+      #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
 
-            75% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
+      .btn-primary table td:hover {
+        background-color: #009ba7 !important;
+      }
 
-            100% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
-        }
+      .btn-primary a:hover {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+    }
 
-        @-o-keyframes loader {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
+    /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+    .main {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      background-color: #D6E7E9;
+    }
 
-            25% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+    .wrapper {
+      background-color: #ffffff;
+      max-width: 800px;
+   	  margin: 0 auto;          
+    }
+      
 
-            50% {
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-                -ms-transform: rotate(225deg);
-            }
+    @media (prefers-color-scheme: dark) {
+      .main {
+        background-color: #D6E7E9;
+      }
 
-            75% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
+      .wrapper {
+        background-color: #ffffff;
+      }          
+    }
+      
+    .wrapper > img {
+      border: none;
+      -ms-interpolation-mode: bicubic;
+      width: 100%;
+    }
 
-            100% {
-                transform: rotate(405deg);
-                -webkit-transform: rotate(405deg);
-                -ms-transform: rotate(405deg);
-            }
-        }
+    .content-block {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
 
+    /* -------------------------------------
+          FOOTER
+      ------------------------------------- */
+    .footer {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      min-height: 700px;
+      background-color: #298490;
+      padding-bottom: 10%;
+    }
+      
+    @media only screen and (max-width:768px)  {
+      .footer {
+        min-height: 400px;
+      }
+    }      
+      
+    @media (prefers-color-scheme: dark) {
+      .footer {
+        background-color: #298490;
+      }          
+    }
 
-        @keyframes loader-inner {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
+    .footer .bckground {
+      margin: 0;
+      border: none;
+      -ms-interpolation-mode: bicubic;
+      width: 100%;
+    }
 
-            25% {
-                transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-            }
+    .footer a {
+      color: #fff;
+    }
 
-            50% {
-                transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-            }
+    .footer .links {
+      display: flex;
+      justify-content: space-around;
+    }
+      
+    .footer .links .stores {
+      /*
+      display: flex;
+      flex-direction: column;
+      */
+      justify-content: space-evenly;
+      width: 30%;
+    }
 
-            75% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
+    .footer .links .stores a {
+       text-align: center;
+       width: 100%;
+       display: block;
+    }
 
-            100% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
-        }
+    .footer .links .stores img {
+       width: 60%;
+    }
 
-        @-webkit-keyframes loader-inner {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
+    .footer .links .social {
+      display: flex;
+      justify-content: space-evenly;
+      width: 40%;
+    }
 
-            25% {
-                transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-            }
+    .footer .links .social a {
+       padding-top: 6%;
+    }
 
-            50% {
-                transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-            }
+    .footer .links .social img {
+       width: 60%;
+    }
+      
+    .footer .links .contactus {
+      width: 30%;
+      padding-left: 4%;
+    }
+      
+    .footer .links .contactus p {
+      text-align: left;
+      margin-bottom: 0px;
+      color: #fff;
+    }
+      
+    @media only screen and (max-width:768px)  {
+      .footer .links .contactus p {
+        font-size: 10px
+      }
+    }      
 
-            75% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
+    .footer .bottom {
+      text-align: center;
+    }
 
-            100% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
-        }
-
-        @-moz-keyframes loader-inner {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
-
-            25% {
-                transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-            }
-
-            50% {
-                transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-            }
-
-            75% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
-        }
-
-        @-o-keyframes loader-inner {
-            0% {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-            }
-
-            25% {
-                transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-            }
-
-            50% {
-                transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-            }
-
-            75% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-            }
-        }
-    </style>
-    <script src="./assets/analytics.js"></script>
-    <script>
-        var $buoop = { vs: { i: 9, f: 15, o: 12.1, s: 5.1 }, c: 2 };
-        function $buo_f() {
-            var e = document.createElement("script");
-            e.src = "//browser-update.org/update.min.js";
-            document.body.appendChild(e);
-        };
-        try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
-        catch (e) { window.attachEvent("onload", $buo_f) }
-    </script>
-    <link type="text/css" rel="stylesheet" href="./assets/app.css">
-    <style type="text/css">
-        .gm-style {
-            font: 400 11px Roboto, Arial, sans-serif;
-            text-decoration: none;
-        }
-
-        .gm-style img {
-            max-width: none;
-        }
-    </style>
+    .footer .bottom a {
+      color: #fff;
+    }
+  </style>
 </head>
 
-<body class="run" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" cz-shortcut-listen="true">
-    <header class="Header-sticky">
-        <div class="Header__bar"><a class="Header__logo" href="http://www.sonako-team.de/de/">
-                <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 709 159"
-                    xml:space="preserve">
-                    <path id="logopath" d="M0.8,99.7l7.1-12.6c1.2-2,4.1-1.7,5.2-0.9c0.6,0.3,11.5,8.3,21.5,8.3
-		c6.1,0,10.5-3.8,10.5-9.1c0-6.4-5.3-11.2-15.6-15.3C16.4,65,0,54.9,0,36.7c0-15,11.7-30.2,35-30.2c15.8,0,27.9,8,32.5,11.4
-		c1.8,1.1,1.5,3.8,0.9,4.9l-7.7,11.7c-1.1,1.7-3.8,3-5.2,2c-1.4-0.8-12.4-9.1-21.7-9.1c-5.5,0-9.6,3.6-9.6,7.7
-		c0,5.6,4.5,9.9,16.5,14.7c11.8,4.7,30.6,14,30.6,34.6c0,15.6-13.5,31.4-35.8,31.4c-19.7,0-30.6-8.2-34.1-11.7
-		C0,102.5-0.5,101.9,0.8,99.7z M136.6,6.5c30.3,0,54.6,24.4,54.6,54.7s-24.3,54.4-54.6,54.4c-30.3,0-54.4-24.1-54.4-54.4
-		S106.3,6.5,136.6,6.5z M136.6,91.4c16.7,0,30.3-13.6,30.3-30.2c0-16.7-13.6-30.5-30.3-30.5c-16.5,0-30.2,13.8-30.2,30.5
-		C106.4,77.8,120.1,91.4,136.6,91.4z M313.1,110.2L360.6,8.2c0.5-0.9,1.5-1.7,2.6-1.7h1.5c1.1,0,2.1,0.8,2.6,1.7l47.5,102.1
-		c0.9,2-0.3,3.9-2.6,3.9h-16.8c-2.7,0-3.9-0.9-5.3-3.8l-5.5-12h-41.2l-5.5,12.1c-0.8,1.8-2.4,3.6-5.5,3.6h-16.7
-		C313.4,114.2,312.2,112.2,313.1,110.2z M375.4,77.8l-11.5-25h-0.2l-11.4,25H375.4z M427.1,11.6c0-2,1.5-3.6,3.6-3.6h17.7
-		c2,0,3.6,1.7,3.6,3.6v39.9l33.7-42c0.6-0.8,2-1.5,2.9-1.5h19.1c2.9,0,4.4,3.3,2.7,5.6L475.1,58l38.7,50.3c1.7,2.3,0,5.6-2.9,5.6
-		h-20.9c-1.1,0-2.4-0.6-2.7-1.1l-35-47.6v45.2c0,2-1.7,3.6-3.6,3.6h-17.7c-2.1,0-3.6-1.7-3.6-3.6V11.6z M573.8,6.5
-		c30.3,0,54.6,24.4,54.6,54.7s-24.3,54.4-54.6,54.4s-54.4-24.1-54.4-54.4S543.5,6.5,573.8,6.5z M573.8,91.4
-		c16.7,0,30.3-13.6,30.3-30.2c0-16.7-13.6-30.5-30.3-30.5c-16.5,0-30.2,13.8-30.2,30.5C543.6,77.8,557.3,91.4,573.8,91.4z
-		 M703.7,46.5c3.7-1.2,5.7,0.9,4.5,4.5L690,107.8c-1.2,3.7-4.4,4.4-7.1,1.7l-10-10l-54.8,54.8c-2.3,2.3-5.5,3.7-8.8,3.7h-321
-		c-6.9,0-12.5-5.6-12.5-12.5v-99c0-11.9-9.6-21.5-21.5-21.5c-11.9,0-21.5,9.6-21.5,21.5V146c0,6.9-5.6,12.5-12.5,12.5H7.3
-		c-3.3,0-6-2.7-6-6v-13c0-3.3,2.7-6,6-6h200.5v-87c0-25.6,20.9-46.5,46.5-46.5c25.6,0,46.5,20.9,46.5,46.5V133h303.3l51.1-51.1
-		l-10-10c-2.7-2.7-2-5.9,1.7-7.1L703.7,46.5z"></path>
-                </svg>
+<body class="">
+  <div class="main">
+    <div class="wrapper">
+      <img align="center" alt="Woodspoon" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/9ecc65cc-9cab-5c42-fee5-9eee8e35bdd4.png"/>
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+        <tr>
+          <td class="container">
+            <div class="content">
+              <br/>
+              <br/>  
+              <br/>  
+              <br/>  
+              <h1>Hey, {{customer_name}}</h1>
+              <br/>
+              <br/>  
+              <br/>  
+              <p>Ready to dig in?</p>
+              <p>
+                Your order
+                <a href="https://www.eatwoodspoon.com/tracker">
+                  {{order_number}}
+                </a>
+                is here.
+              </p>
+              <p>From our homes to yours,</p>
+              <p>we hope you enjoy this special experience, </p>
+              <p>made fresh just for you. </p>
+              <br/>  
+              <br/>  
+              <p>Don’t forget to share your </p>
+              <p><span class="hashtag">#eatwoodspoon</span> moment on Instagram.</p>
+              <br/>
+              <br/>  
+              <br/>  
+              <br/>  
+              <div class="btn">
+                <a href="https://woodspoon.app.link/woodspoon">
+                  Leave a review
+                </a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="footer">
+        <img class="bckground" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/2bcc3a0d-2f26-a666-7379-253e400e787e.png"/>
+        <div class="links">
+          <div class="contactus">
+            <p>CONTACT US</p>
+            <p>
+              <a href="tel:(646)-481-4121">(646)-481-4121</a>
+            </p>
+            <p>
+              <a href="mailto:support@eatwoodspoon.com">EMAIL</a>
+            </p>
+          </div>
+          <div class="social">
+            <a href="https://www.instagram.com/eatwoodspoon">
+              <img alt="Instagram" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/f43d097a-d7d6-17e5-f91f-7199c9d02142.png"/>
             </a>
-            <div class="Header__button">
-                <div class="Button Button--toggle"><span></span></div>
-            </div>
-            <div class="Header__info">
-                <div class="Hotline"><span>Unsere Hotline</span><a href="tel:00493677650863">+49 (0) 3677 6508-63</a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <header class="Header">
-        <div class="Header__bar"><a class="Header__logo" href="http://www.sonako-team.de/de/">
-                <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 709 159"
-                    xml:space="preserve">
-                    <path id="logopath" d="M0.8,99.7l7.1-12.6c1.2-2,4.1-1.7,5.2-0.9c0.6,0.3,11.5,8.3,21.5,8.3
-		c6.1,0,10.5-3.8,10.5-9.1c0-6.4-5.3-11.2-15.6-15.3C16.4,65,0,54.9,0,36.7c0-15,11.7-30.2,35-30.2c15.8,0,27.9,8,32.5,11.4
-		c1.8,1.1,1.5,3.8,0.9,4.9l-7.7,11.7c-1.1,1.7-3.8,3-5.2,2c-1.4-0.8-12.4-9.1-21.7-9.1c-5.5,0-9.6,3.6-9.6,7.7
-		c0,5.6,4.5,9.9,16.5,14.7c11.8,4.7,30.6,14,30.6,34.6c0,15.6-13.5,31.4-35.8,31.4c-19.7,0-30.6-8.2-34.1-11.7
-		C0,102.5-0.5,101.9,0.8,99.7z M136.6,6.5c30.3,0,54.6,24.4,54.6,54.7s-24.3,54.4-54.6,54.4c-30.3,0-54.4-24.1-54.4-54.4
-		S106.3,6.5,136.6,6.5z M136.6,91.4c16.7,0,30.3-13.6,30.3-30.2c0-16.7-13.6-30.5-30.3-30.5c-16.5,0-30.2,13.8-30.2,30.5
-		C106.4,77.8,120.1,91.4,136.6,91.4z M313.1,110.2L360.6,8.2c0.5-0.9,1.5-1.7,2.6-1.7h1.5c1.1,0,2.1,0.8,2.6,1.7l47.5,102.1
-		c0.9,2-0.3,3.9-2.6,3.9h-16.8c-2.7,0-3.9-0.9-5.3-3.8l-5.5-12h-41.2l-5.5,12.1c-0.8,1.8-2.4,3.6-5.5,3.6h-16.7
-		C313.4,114.2,312.2,112.2,313.1,110.2z M375.4,77.8l-11.5-25h-0.2l-11.4,25H375.4z M427.1,11.6c0-2,1.5-3.6,3.6-3.6h17.7
-		c2,0,3.6,1.7,3.6,3.6v39.9l33.7-42c0.6-0.8,2-1.5,2.9-1.5h19.1c2.9,0,4.4,3.3,2.7,5.6L475.1,58l38.7,50.3c1.7,2.3,0,5.6-2.9,5.6
-		h-20.9c-1.1,0-2.4-0.6-2.7-1.1l-35-47.6v45.2c0,2-1.7,3.6-3.6,3.6h-17.7c-2.1,0-3.6-1.7-3.6-3.6V11.6z M573.8,6.5
-		c30.3,0,54.6,24.4,54.6,54.7s-24.3,54.4-54.6,54.4s-54.4-24.1-54.4-54.4S543.5,6.5,573.8,6.5z M573.8,91.4
-		c16.7,0,30.3-13.6,30.3-30.2c0-16.7-13.6-30.5-30.3-30.5c-16.5,0-30.2,13.8-30.2,30.5C543.6,77.8,557.3,91.4,573.8,91.4z
-		 M703.7,46.5c3.7-1.2,5.7,0.9,4.5,4.5L690,107.8c-1.2,3.7-4.4,4.4-7.1,1.7l-10-10l-54.8,54.8c-2.3,2.3-5.5,3.7-8.8,3.7h-321
-		c-6.9,0-12.5-5.6-12.5-12.5v-99c0-11.9-9.6-21.5-21.5-21.5c-11.9,0-21.5,9.6-21.5,21.5V146c0,6.9-5.6,12.5-12.5,12.5H7.3
-		c-3.3,0-6-2.7-6-6v-13c0-3.3,2.7-6,6-6h200.5v-87c0-25.6,20.9-46.5,46.5-46.5c25.6,0,46.5,20.9,46.5,46.5V133h303.3l51.1-51.1
-		l-10-10c-2.7-2.7-2-5.9,1.7-7.1L703.7,46.5z"></path>
-                </svg>
+            <a href="https://www.youtube.com/channel/UCnWLG-ildXH3BNk-tH9jYXg/featured">
+              <img alt="Youtube" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/66e64ebf-0ab4-85be-97af-112c697abc34.png"/>
             </a>
-            <div class="Header__button">
-                <div class="Button Button--toggle"><span></span></div>
-            </div>
-            <div class="Header__info">
-                <div class="Hotline"><span>Unsere Hotline</span><a href="tel:00493677650863">+49 (0) 3677 6508-63</a>
-                </div>
-            </div>
-        </div>
-        <div class="Header__body">
-            <svg version="1.2" baseProfile="tiny" id="Gruppe_9" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2016.7 2564.1"
-                xml:space="preserve" preserveAspectRatio="xMidYMid">
-
-                <rect id="Box1" x="98.4" y="342.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -311.6386 752.3617)"
-                    fill="#7DA4C7" width="1308" height="820"></rect>
-                <rect id="Box2" x="610.4" y="1382.4"
-                    transform="matrix(0.7071 -0.7071 0.7071 0.7071 -897.0684 1419.0093)" fill="#7DA4C7" width="1308"
-                    height="820"></rect>
-                <path id="Path1" fill="none" stroke="#EE6C4D" stroke-miterlimit="10" d="M1743.5,176.5L546,1374"></path>
-                <path id="Path2" fill="none" stroke="#D6FDF0" stroke-width="3" stroke-miterlimit="10"
-                    d="M1549.5,1103.5L352,2301"></path>
-                <path id="Path3" fill="none" stroke="#7DA4C7" stroke-width="3" stroke-miterlimit="10"
-                    d="M1305.5,1365.5L108,2563"></path>
-
-            </svg>
-
-            <div class="Menu" role="navigation">
-                <ul class="Menu__body">
-                    <li><a href="http://www.sonako-team.de/de/">Home</a></li>
-                    <li><a href="http://www.sonako-team.de/de/unternehmen/" class="">Unternehmen</a></li>
-                    <li><a href="http://www.sonako-team.de/de/leistungen/">Leistungen</a></li>
-                    <li><a href="http://www.sonako-team.de/de/kontakt/">Kontakt</a></li>
-                </ul>
-                <ul class="Menu__footer">
-                    <li><a href="http://www.sonako-team.de/de/impressum/">Impressum</a></li>
-                    <li><a href="http://www.sonako-team.de/de/datenschutz/">Datenschutzbestimmungen</a></li>
-                    <li><a href="http://www.sonako-team.de/de/agb/">AGB</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <div class="Page" data-hook="switcher">
-
-        <div class="View" style="opacity: 1;">
-            <div class="Hero [ Element ]" data-view="SliderView" id="HomeSlider" data-settings="full">
-                <div class="Hero__body">
-                    <div class="Slider__swiper">
-                        <div class="swiper-container swiper-container-horizontal">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide swiper-slide-active" style="width: 1215px;">
-                                    <div class="Figure Figure--responsive"><img src="./assets/slide-1.jpg" alt="">
-                                        <div class="Figure__caption">
-                                            <p>Professionelle Dienstleistungen für den Qualitätssektor</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-next" style="width: 1215px;">
-                                    <div class="Figure Figure--responsive"><img src="./assets/slide-2.jpg" alt="">
-                                        <div class="Figure__caption">
-                                            <p>Zertifiziert nach DIN ISO 9001:2015</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 1215px;">
-                                    <div class="Figure Figure--responsive"><img src="./assets/slide-3.jpg" alt="">
-                                        <div class="Figure__caption">
-                                            <p>Prüfen, sichtprüfen, sortieren, nacharbeiten und mehr</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 1215px;">
-                                    <div class="Figure Figure--responsive"><img src="./assets/slide-4.jpg" alt="">
-                                        <div class="Figure__caption">
-                                            <p>Unser Fachpersonal ist 24 Stunden einsatzbereit - deutschlandweit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev swiper-button-disabled"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-                            class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
-                            class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
-                            class="swiper-pagination-bullet"></span></div>
-                </div>
-            </div>
-            <div class="Inshort">
-                <div class="Vektor Vektor--home-inshort aos-init" data-aos="svg-line"><svg id="fond-home-inshort"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 517.99">
-                        <g class="animate-box">
-                            <rect id="fond-home-inshort-rect-2" x="118.12" y="33.59" width="170" height="181.08"
-                                transform="translate(-28.28 179.99) rotate(-45)"
-                                style="fill: #d6fdf0;opacity: 0.5;isolation: isolate"></rect>
-                        </g>
-                        <rect id="fond-home-inshort-rect-1" x="-637.48" y="-135.57" width="692.22" height="746.39"
-                            transform="translate(-253.37 -136.44) rotate(-45)"
-                            style="fill: #7da4c7;opacity: 0.300000011920929;isolation: isolate"></rect>
-                        <path class="animate" id="fond-home-inshort-oval"
-                            d="M211.5,222a27.86,27.86,0,0,1,6,.66,27.54,27.54,0,1,1-6-.66Z"
-                            style="fill: none;stroke: #ee6c4d;stroke-width: 2px"></path>
-                    </svg>
-
-                </div>
-                <div class="Inshort__body aos-init" data-aos="fade-up" data-aos-duration="600">
-                    <div class="Inshort__intro">
-                        <div class="Heading Heading--minor">
-                            <h1>Wir sind ein schlank strukturierter Dienstleister mit dem Fokus auf die
-                                Qualitätssicherung als Ihr zuverlässiger Partner bei Ihnen im Haus und bei Ihren
-                                Lieferanten.</h1>
-                        </div>
-                        <div class="Calltoaction"><a href="http://www.sonako-team.de/de/kontakt/"><span>
-                                    <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 44.8 45.1" xml:space="preserve">
-
-                                        <circle fill="none" stroke-miterlimit="10" cx="22.4" cy="22.5" r="21.6">
-                                        </circle>
-                                        <path id="path-1_1_" d="M25.1,15.8c-0.3-0.3-0.7-0.3-1,0c-0.3,0.3-0.3,0.7,0,1l5.1,5.1H12.3c-0.4,0-0.7,0.3-0.7,0.7
-	c0,0.4,0.3,0.7,0.7,0.7h16.9L24,28.3c-0.3,0.3-0.3,0.7,0,1c0.3,0.3,0.7,0.3,1,0l6.3-6.3c0.3-0.3,0.3-0.7,0-1L25.1,15.8z">
-                                        </path>
-
-                                    </svg>
-                                </span>Kontakt aufnehmen</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="Columns">
-                <div class="Vektor Vektor--home-intro aos-init" data-aos="svg-line"><svg id="fond-home-intro"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1720">
-                        <polygon class="animate-afterline"
-                            points="1386.05 4.5 1372.79 8.21 1371.83 8.48 1372.37 10.4 1373.33 10.13 1384.88 6.9 1381.65 18.45 1381.38 19.41 1383.3 19.95 1383.57 18.99 1387.29 5.73 1387.76 4.02 1386.05 4.5"
-                            style="fill: #b3d6d3"></polygon>
-                        <line class="animate" id="fond-home-intro-line" x1="1385.59" y1="6.19" x2="-505.62" y2="1897.4"
-                            style="fill: none;stroke: #b3d6d3;stroke-width: 2px"></line>
-                        <rect id="fond-home-intro-rect3" x="1448.99" y="932.35" width="527" height="527"
-                            transform="translate(-344.01 1561.17) rotate(-45)"
-                            style="fill: #7da4c7;opacity: 0.30000001192092896;isolation: isolate"></rect>
-                        <g class="animate-box">
-                            <rect id="fond-home-intro-rect2" x="1242.17" y="1093.22" width="201" height="201"
-                                transform="translate(-450.83 1299.05) rotate(-45)"
-                                style="fill: #b3d6d3;opacity: 0.4000000059604645;isolation: isolate"></rect>
-                        </g>
-                        <rect id="fond-home-intro-rect1" x="1396.09" y="1078.44" width="34" height="34"
-                            transform="translate(-360.71 1320.05) rotate(-45)"
-                            style="fill: none;stroke: #7da4c7;stroke-width: 5px;opacity: 0.4000000059604645;isolation: isolate">
-                        </rect>
-                        <path id="fond-home-intro-circle" class="animate-afterbox"
-                            d="M1361,1196.27a17.49,17.49,0,1,1-17.49-17.49A17.48,17.48,0,0,1,1361,1196.27Z"
-                            style="fill: #7da4c7;isolation: isolate"></path>
-                        <polygon id="fond-home-intro-hacken" class="animate-afterbox"
-                            points="1341.26 1199.37 1337.89 1196 1335.17 1198.73 1341.26 1205.4 1353.83 1192.83 1351.11 1189.52 1341.26 1199.37"
-                            style="fill: #fefefe;isolation: isolate"></polygon>
-                    </svg>
-
-                </div>
-                <div class="Columns__body">
-                    <div>
-                        <article data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="aos-init">
-                            <h2>Flexible und schnelle operative Qualitätssicherung</h2>
-                            <p>In der operativen Qualitätssicherung stehen Ihnen unsere gut geschulten Facharbeiter,
-                                Meister und Messtechniker, deutschlandweit und rund um die Uhr zur Verfügung.</p>
-                            <div class="Calltoaction Calltoaction--inbox"><a
-                                    href="http://www.sonako-team.de/de/kontakt"><span>
-                                        <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 44.8 45.1" xml:space="preserve">
-
-                                            <path id="path-1_1_" d="M25.1,15.8c-0.3-0.3-0.7-0.3-1,0c-0.3,0.3-0.3,0.7,0,1l5.1,5.1H12.3c-0.4,0-0.7,0.3-0.7,0.7
-	c0,0.4,0.3,0.7,0.7,0.7h16.9L24,28.3c-0.3,0.3-0.3,0.7,0,1c0.3,0.3,0.7,0.3,1,0l6.3-6.3c0.3-0.3,0.3-0.7,0-1L25.1,15.8z">
-                                            </path>
-
-                                        </svg>
-                                    </span>Kontakt aufnehmen</a></div>
-                        </article><img src="./assets/intro-1.jpg">
-                    </div>
-                    <div>
-                        <article class="Box Box--grey">
-                            <p>Unsere Leistungen im einzelnen</p>
-                            <ul>
-                                <li>Prüfen</li>
-                                <li>Sichtprüfen</li>
-                                <li>Sortieren</li>
-                                <li>Nacharbeiten</li>
-                                <li>Wareneingangskontrolle</li>
-                                <li>Warenausgangskontrolle</li>
-                            </ul>
-                            <div class="small">
-                                <p>Unsere Leistungen enthalten</p>
-                                <ul>
-                                    <li>24 Stunden Einsatzbereitschaft</li>
-                                    <li>Einheitliches Auftreten in Arbeitskleidung</li>
-                                    <li>Dokumentation der geleisteten Arbeit (auf Wunsch täglich)</li>
-                                    <li>Keine überflüssige Personalrotation</li>
-                                    <li>Hohe Flexibilität </li>
-                                </ul>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-            <div class="Stopper">
-                <div class="Stopper__body">
-                    <div>
-                        <h1>Machen Sie sich selbst ein Bild von unserer Arbeit und testen Sie uns!</h1>
-                    </div>
-                    <div>
-                        <div class="InlineLink InlineLink--icon"><span><svg version="1.2" baseProfile="tiny"
-                                    id="telephone_icon" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32"
-                                    xml:space="preserve">
-                                    <path id="path-1_1_" fill="#EE6C4D" d="M31.3,25.3l-4.9-5c-1-1-2.6-1-3.6,0.1l-2.5,2.5c-0.2-0.1-0.3-0.2-0.5-0.3
-	c-1.6-0.9-3.7-2.1-6-4.3c-2.3-2.3-3.5-4.4-4.3-6c-0.1-0.2-0.2-0.3-0.3-0.5l1.7-1.7l0.8-0.8c1-1,1-2.7,0.1-3.6l-4.9-5
-	c-1-1-2.6-1-3.6,0.1L1.7,2.2l0,0c-0.5,0.6-0.9,1.3-1.1,2C0.3,5,0.2,5.6,0.1,6.3c-0.7,5.4,1.8,10.4,8.5,17.1
-	c9.3,9.3,16.7,8.6,17.1,8.6c0.7-0.1,1.4-0.3,2.1-0.5c0.7-0.3,1.4-0.7,2-1.1l0,0l1.4-1.4C32.2,27.9,32.3,26.3,31.3,25.3z">
-                                    </path>
-                                </svg>
-                            </span><a href="tel:00493677650863"><span>Wir freuen uns auf Ihren Anruf</span>+49 (0) 3677
-                                6508-63</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="Columns">
-                <div class="Vektor Vektor--home-zertifikat aos-init" data-aos="svg-line"><svg id="fond-home-zertifikat"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1720">
-                        <path class="animate" id="Line-3-Copy" d="M-94.5-50.17,1797.62,1842"
-                            style="fill: none;stroke: #b8bac9;stroke-linecap: square"></path>
-                    </svg>
-
-                </div>
-                <div class="Columns__body">
-                    <div class="Colum--pushtop">
-                        <article class="Box Box--grey aos-init" data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom">
-                            <h2>Wir sind DIN ISO 9001:2015 zertifiziert.</h2>
-                            <p>Unsere Prozesse sind nach DIN ISO 9001:2015zertifiziert und werden regelmäßig modifiziert
-                                und auf Ihre besonderen Ansprüche überprüft. Die ISO-Zertifizierung aller Abwicklungs.
-                                und Vertriebsprozesse in Verbindung mit dem Qualitätsmanagement sichern Ihnen
-                                transparente Prozesse und Dokumentation und zusätzliche Qualitätssicherung.</p>
-                            <div class="Calltoaction Calltoaction--inbox"><a
-                                    href="http://www.sonako-team.de/de/downloads/SONAKO-ISO-Zertifikat.pdf"><span>
-                                        <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 44.8 45.1" xml:space="preserve">
-
-                                            <path id="path-1_1_" d="M25.1,15.8c-0.3-0.3-0.7-0.3-1,0c-0.3,0.3-0.3,0.7,0,1l5.1,5.1H12.3c-0.4,0-0.7,0.3-0.7,0.7
-	c0,0.4,0.3,0.7,0.7,0.7h16.9L24,28.3c-0.3,0.3-0.3,0.7,0,1c0.3,0.3,0.7,0.3,1,0l6.3-6.3c0.3-0.3,0.3-0.7,0-1L25.1,15.8z">
-                                            </path>
-
-                                        </svg>
-                                    </span>Zertifkat herunterladen</a></div>
-                        </article>
-                    </div>
-                    <div><img src="./assets/intro-2.jpg"><img src="./assets/zertifikat.jpg"></div>
-                </div>
-            </div>
-            <div class="Stopper">
-                <div class="Stopper__body">
-                    <div>
-                        <h1>Haben Sie Interesse an einer Mitarbeit?</h1>
-                        <p>Dann senden Sie Ihre vollständigen und aussagekräftigen Bewerbungsunterlagen ausschließlich
-                            an</p>
-                    </div>
-                    <div>
-                        <div class="InlineLink InlineLink--icon"><span>
-                                <!--?xml version="1.0" encoding="utf-8"?-->
-                                <svg version="1.2" baseProfile="tiny" id="iconmail" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 26"
-                                    xml:space="preserve">
-                                    <path id="path-1_1_" fill="#EE6C4D" d="M28.1,0.8H3.8C1.7,0.8,0,2.4,0,4.5v17c0,2,1.7,3.6,3.8,3.6h24.3c2.1,0,3.8-1.6,3.8-3.6
-					v-17C31.9,2.4,30.2,0.8,28.1,0.8z M28.1,21.8H3.8c-0.3,0-0.6-0.2-0.6-0.4V6.7l11,9.3c0.2,0.2,0.5,0.3,0.8,0.3l1.9,0
-					c0.3,0,0.6-0.1,0.8-0.3l11-9.3v14.7C28.7,21.7,28.4,21.8,28.1,21.8z M16,13.1L5.3,4h21.4L16,13.1z"></path>
-                                </svg>
-                            </span><a href="mailto:bewerbung@sonako-team.de"><span>Frau Christine
-                                    Schröck</span>bewerbung@sonako-team.de</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="Footer">
-        <div class="Footer__body">
-            <div class="Footer__menu">
-                <ul>
-                    <li><a href="http://www.sonako-team.de/de/">Impressum</a></li>
-                    <li><a href="http://www.sonako-team.de/de/datenschutz/">Datenschutzbestimmungen</a></li>
-                    <li><a href="http://www.sonako-team.de/de/agb/">AGB</a></li>
-                </ul>
-            </div>
-            <div class="Footer__adress"><a href="tel:00493677650863">Hotline: <span>+49 (0) 3677 6508-63</span></a>
-            </div>
-            <div class="Footer__social"><a href="https://www.xing.com/companies/sonako-team" target="_blank">
-                    <!--?xml version="1.0" encoding="utf-8"?-->
-                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                    <svg version="1.2" baseProfile="tiny" id="Ebene_1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 49.986 49.987"
-                        xml:space="preserve">
-                        <path fill="#666666" d="M24.999,0C11.193,0,0,11.192,0,24.999c0,13.807,11.193,24.999,24.999,24.999s24.999-11.192,24.999-24.999
-	C49.998,11.192,38.805,0,24.999,0z M15.975,31.976h-5.016c-0.302,0-0.528-0.136-0.655-0.343c-0.133-0.214-0.14-0.492,0-0.769
-	l5.328-9.403c0.006-0.011,0.006-0.017,0-0.029l-3.391-5.871c-0.14-0.279-0.16-0.555-0.029-0.769
-	c0.128-0.207,0.382-0.313,0.685-0.313h5.015c0.77,0,1.146,0.496,1.396,0.94c0,0,3.428,5.979,3.447,6.012
-	c-0.202,0.358-5.413,9.575-5.413,9.575C17.085,31.469,16.725,31.976,15.975,31.976z M39.689,8.707L28.585,28.339
-	c-0.007,0.011-0.007,0.023,0,0.033l7.069,12.917c0.14,0.278,0.144,0.561,0.011,0.775c-0.127,0.206-0.363,0.321-0.666,0.321h-5.01
-	c-0.768,0-1.151-0.511-1.4-0.955c0,0-7.107-13.04-7.125-13.074c0.354-0.629,11.158-19.789,11.158-19.789
-	c0.269-0.483,0.595-0.955,1.343-0.955h5.066c0.303,0,0.539,0.114,0.667,0.32C39.831,8.147,39.827,8.429,39.689,8.707z">
-                        </path>
-                    </svg>
-                </a></div>
-        </div>
-    </div>
-
-    <script>
-        (function (b, o, i, l, e, r) {
-            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
-                function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
-            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
-            e.src = '/assets/analytics.js';
-            r.parentNode.insertBefore(e, r)
-        }(window, document, 'script', 'ga'));
-        ga('create', 'UA-XXXXX'); ga('set', 'anonymizeIp', true); ga('send', 'pageview');
-
-        // Set to the same value as the web property used on the site
-        var gaProperty = 'UA-XXXXXX';
-
-        // Disable tracking if the opt-out cookie exists.
-        var disableStr = 'ga-disable-' + gaProperty;
-        if (document.cookie.indexOf(disableStr + '=true') > -1) {
-            window[disableStr] = true;
-        }
-
-        // Opt-out function
-        function gaOptout() {
-            document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-            window[disableStr] = true;
-            alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Webseite deaktiviert');
-        }
-    </script>
-
-    <script src="./assets/update.min.js"></script>
+            <a href="https://www.facebook.com/315306249346212" style="display: block;">
+              <img alt="Facebook" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/bde0c040-6b3a-2deb-503d-90032a065bce.png"/>
+            </a>                
+            <a href="https://vm.tiktok.com/ZSe366U67/">
+              <img alt="Tiktok" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/cadf8de1-eaa8-4797-6cad-d21a31980100.png"/>
+            </a>                
+          </div>
+          <div class="stores">
+            <a href="https://play.google.com/store/apps/details?id=com.bupp.wood_spoon_eaters">
+              <img alt="Google Play" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/b4ed48ee-17db-bc85-24dd-873aed11525b.png"/>
+            </a>
+            <a href="https://apps.apple.com/us/app/woodspoon-local-food-delivery/id1482111259?ign-mpt=uo%3D2">
+              <img alt="App Store" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/682db41b-84f4-c5e8-b452-44f69e0719d4.png"/>
+            </a>  
+          </div>
+        </div>       
+        <div class="bottom">
+          <a href="https://www.eatwoodspoon.com/">
+            www.eatwoodspoon.com
+          </a>
+          <br/>
+          <!--a href="*|UNSUB|*">
+            UNSUBSCRIBE
+          </a-->        
+        </div>            
+      </div>			
+    </div>			
+  </div>			
 </body>
 
 </html>
