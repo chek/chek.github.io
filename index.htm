@@ -17,7 +17,6 @@
     }
 
     body {
-      background-color: #fff;
       color: #636466;
       font-family: sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -47,10 +46,19 @@
           BODY & CONTAINER
       ------------------------------------- */
 
-    .body, .container, .content {
+    .body {
       width: 100%;
     }
 
+    /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+    .container {
+      display: block;
+      margin: 0 auto !important;
+      /* makes it centered */
+      max-width: 600px;
+      padding: 0;
+      width: 600px;
+    }
     /* -------------------------------------
           TYPOGRAPHY
       ------------------------------------- */
@@ -72,6 +80,10 @@
       line-height: 1.2em;
     }
 
+    h2 {
+      color: #00a6aa;
+    }
+          
     h3,
     .h3 {
       font-size: 16px;
@@ -116,12 +128,16 @@
     .btn {
       border-radius: 30px;
       width: 200px;
-      background-color: #1E3A3B;
+      background-color: #00A6AA;
       margin: 0 auto;
       text-align: center;
       line-height: 50px;
     }
 
+    .btn.contactus {
+      background-color: #32595A;
+    }
+      
     .btn a {
       color: #ffffff;
       font-size: 18px;
@@ -129,7 +145,11 @@
       
     @media (prefers-color-scheme: dark) {
       .btn {
-        background-color: #1E3A3B;
+        background-color: #00A6AA;
+      }          
+
+      .btn.contactus {
+        background-color: #32595A;
       }          
 
       .btn a {
@@ -231,7 +251,7 @@
     }
 
     /* -------------------------------------
-          HEADER, FOOTER, MAIN
+          HEADER, MAIN
       ------------------------------------- */
     .main {
       width: 100%;
@@ -241,22 +261,21 @@
     }
 
     .wrapper {
-      background-color: #ffffff;
-      max-width: 800px;
-   	  margin: 0 auto;          
+      background-color: #D3E9EB;
+	  max-width: 800px;
+	  margin: 0 auto;          
     }
       
-
     @media (prefers-color-scheme: dark) {
       .main {
         background-color: #D6E7E9;
       }
-
+      
       .wrapper {
-        background-color: #ffffff;
+        background-color: #D3E9EB;
       }          
     }
-      
+
     .wrapper > img {
       border: none;
       -ms-interpolation-mode: bicubic;
@@ -268,6 +287,119 @@
       padding-top: 10px;
     }
 
+
+    /* This should also be a block element, so that it will fill 100% of the .container */
+    .content {
+      box-sizing: border-box;
+      display: block;
+      margin: 0 auto;
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .content .social {
+      width: 100%;
+      display: flex;    
+    }
+      
+    .content .social > div {
+       margin: 0 auto;
+    }
+      
+    .content .social > div > div {
+      background-color: #298490;
+      border-radius: 50%;
+      width: 3vw;
+      height: 3vw;
+      float: left;
+      margin: 0 5px;
+    }
+      
+    @media only screen and (max-width:768px)  {
+      .content .social > div > div {
+        width: 8vw;
+        height: 8vw;
+      }
+    }      
+
+    .content .social a img {
+      width: 85%;
+	  margin-left: 7%;
+      margin-top: 7%;          
+    }
+
+    .receipt {
+      background-color: #ffffff;
+      padding: 5%;
+    }
+    
+    .items-logo {
+      width: 25%;
+      height: 25%;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 5%;
+    }
+      
+    .order-items {
+      padding: 0;
+    }
+    
+    .order-items .pic {
+      width: 20%;
+    }
+
+    @media only screen and (max-width:768px)  {
+      .order-items .pic {
+	      width: 10%;
+      }
+    }      
+    
+    .order-items .pic img {
+      width: 100%;
+    }      
+    
+    .order-items tr h3 {
+      color: #00a6aa;
+      padding-top: 8%;
+      flex: 1;
+      text-align: center;
+    }
+    
+    .order-items tr .price{
+      color: #00a6aa;
+      text-align: end;
+    }
+      
+    .summary {
+      border-top: solid 2px #00a6aa;
+      padding-top: 5%;
+      margin-top: 5%;
+    }
+      
+    .summary h2 {
+      text-align: left;
+    }
+      
+    .summary tr {
+      color: #00a6aa;
+      display: flex;
+      justify-content: space-between;
+      margin-top:1%
+    }
+      
+    .summary tr td {
+      text-align: end;
+      width: 50%;
+    }
+      
+    .summary tr td.first-child {
+      text-align: start;
+    }
+      
+    .summary tr.total {
+      margin-top:3%
+    }      
     /* -------------------------------------
           FOOTER
       ------------------------------------- */
@@ -284,7 +416,7 @@
       .footer {
         min-height: 400px;
       }
-    }      
+    }  
       
     @media (prefers-color-scheme: dark) {
       .footer {
@@ -309,10 +441,6 @@
     }
       
     .footer .links .stores {
-      /*
-      display: flex;
-      flex-direction: column;
-      */
       justify-content: space-evenly;
       width: 30%;
     }
@@ -371,7 +499,7 @@
 <body class="">
   <div class="main">
     <div class="wrapper">
-      <img align="center" alt="Woodspoon" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/9ecc65cc-9cab-5c42-fee5-9eee8e35bdd4.png"/>
+      <img align="center" alt="Woodspoon" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/23de9849-1ffc-7af9-83a5-3e4a350a10f3.gif"/>
       <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
         <tr>
           <td class="container">
@@ -384,20 +512,13 @@
               <br/>
               <br/>  
               <br/>  
-              <p>Ready to dig in?</p>
-              <p>
-                Your order
-                <a href="https://www.eatwoodspoon.com/tracker">
-                  {{order_number}}
-                </a>
-                is here.
-              </p>
-              <p>From our homes to yours,</p>
-              <p>we hope you enjoy this special experience, </p>
-              <p>made fresh just for you. </p>
+              <p>We hope you are as excited as we are</p>
+              <p>about your upcoming WoodSpoon order!</p>
+              <p>Our Home Chef is carefully crafting your food </p>
+              <p>and we will be in touch as soon as your order is ready.</p>
               <br/>  
               <br/>  
-              <p>Don’t forget to share your </p>
+              <p>Don`t forget to share your </p>
               <p><span class="hashtag">#eatwoodspoon</span> moment on Instagram.</p>
               <br/>
               <br/>  
@@ -405,18 +526,102 @@
               <br/>  
               <div class="btn">
                 <a href="https://woodspoon.app.link/woodspoon">
-                  Leave a review
+                  Track Your Order
                 </a>
               </div>
+              <br/>  
+              <br/>  
+                
+              <div class="receipt">
+                <img alt="Logo" class="items-logo" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/64e4361d-fdf8-f1fa-09b2-5949427a0f3d.png"/>
+                <h2>Thanks for your order!</h2>
+                {{#order_items}}            
+                <table class="order-items" type="1">
+                  <tr>
+                    <td class="pic">
+                        <img src="{{this.pic}}"/>
+                    </td>
+                    <td>
+                        <h3>{{this.name}}</h3>
+                        <p>x {{this.quantity}}</p>
+                    </td>
+                    <td class="price">{{this.price}}</td>
+                  </tr>
+                </table>            
+                {{/order_items}}            
+                  
+                  
+                <table class="summary">
+                  <tr>	        
+                    <td colspan="2"><h2>Summary</h2></td>
+                  </tr>
+                  <tr>
+                    <td class="first-child">Subtotal</td>
+                    <td>{{subtotal}}</td>
+                  </tr>
+                  <tr>
+                    <td class="first-child">Delivery Fee</td>
+                    <td>{{delivery_fee}}</td>
+                  </tr>
+                  <tr>
+                    <td class="first-child">Fees & Estimated Tax</td>
+                    <td>{{fees_estimated_tax}}</td>
+                  </tr>
+                  {{#if discount}}
+                    <tr>
+                      <td class="first-child">Promo Code</td>
+                      <td>{{discount}}</td>
+                    </tr>
+                  {{/if}}
+                  <tr>
+                    <td class="first-child">Tips for your courier</td>
+                    <td>{{tip}}</td>
+                  </tr>
+                  <tr class="total">
+                    <td class="first-child"><b>Total</b></td>
+                    <td><b>{{total}}</b></td>
+                  </tr>
+                </table>
+              </div>            
+                
+                
+
+              <br/>  
+              <br/>  
+              <p>Need help with your order?</p>
+              <br/>  
+              <div class="btn contactus">
+                  <a href="https://www.eatwoodspoon.com/contact-us">
+                    CONTACT US
+                  </a>
+              </div>
+              <br/>  
+              <br/>  
+              <p>While you wait, see what’s new:</p>
+              <br/>            
+              <div class="social">
+                <div>
+                  <div>
+                    <a href="https://www.instagram.com/eatwoodspoon">
+                      <img alt="Instagram" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/f43d097a-d7d6-17e5-f91f-7199c9d02142.png"/>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://vm.tiktok.com/ZSe366U67/">
+                      <img alt="Tiktok" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/cadf8de1-eaa8-4797-6cad-d21a31980100.png"/>
+                    </a> 
+                  </div>
+                </div>
+              </div>                        
             </div>
           </td>
         </tr>
       </table>
       <div class="footer">
-        <img class="bckground" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/2bcc3a0d-2f26-a666-7379-253e400e787e.png"/>
+        <img class="bckground" src="https://mcusercontent.com/cc966e49b3f8870a65ec6349a/images/72c86cc4-9af7-a4e9-6334-d5070d1291e0.png"/>
         <div class="links">
           <div class="contactus">
-            <p>CONTACT US</p>
+            <p>CONTACT US</p>              
             <p>
               <a href="tel:(646)-481-4121">(646)-481-4121</a>
             </p>
